@@ -1,0 +1,27 @@
+{
+  "name": "ping-pong",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A lightweight browser ping pong game built with HTML canvas.",
+  "type": "module",
+  "scripts": {
+    "start": "node tools/local-server.mjs 8000",
+    "serve": "node tools/local-server.mjs 8000",
+    "verify": "node tools/verify-game.mjs"
+  },
+  "keywords": [
+    "ping-pong",
+    "pong",
+    "canvas",
+    "game",
+    "javascript"
+  ],
+  "author": "Tusharsharma420",
+  "license": "MIT",
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
