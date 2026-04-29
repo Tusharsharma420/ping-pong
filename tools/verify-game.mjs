@@ -4,6 +4,7 @@ import { mkdir, readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 
 const root = process.cwd();
+const browserExecutable = process.env.CHROME_EXECUTABLE_PATH;
 const types = new Map([
   [".html", "text/html; charset=utf-8"],
   [".css", "text/css; charset=utf-8"],
@@ -18,6 +19,7 @@ const server = createServer(async (request, response) => {
       response.end();
       return;
     }
+
     const requestedPath = url.pathname === "/" ? "/index.html" : url.pathname;
     const filePath = normalize(join(root, requestedPath));
     if (!filePath.startsWith(root)) {
@@ -25,6 +27,7 @@ const server = createServer(async (request, response) => {
       response.end("Forbidden");
       return;
     }
+
     const body = await readFile(filePath);
     response.writeHead(200, { "content-type": types.get(extname(filePath)) ?? "application/octet-stream" });
     response.end(body);
@@ -39,7 +42,7 @@ const { port } = server.address();
 
 const browser = await chromium.launch({
   headless: true,
-  executablePath: "C:/Program Files/Google/Chrome/Application/chrome.exe",
+  ...(browserExecutable ? { executablePath: browserExecutable } : {}),
 });
 
 const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
