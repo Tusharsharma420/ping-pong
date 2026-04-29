@@ -1,0 +1,81 @@
+/* Pixel-art / retro look */
+:root{
+  --bg:#0b0b0b;
+  --panel:#0f1720;
+  --accent:#7fffd4;
+  --muted:#9ca3af;
+}
+
+/* Reset + center */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#071019 0%, #051217 100%);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Game container */
+#game-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  padding:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:4px solid rgba(255,255,255,0.04);
+  border-radius:6px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* Canvas: keep native resolution for crisp pixels; scale up visually */
+canvas#game{
+  image-rendering: pixelated; /* crisp nearest-neighbor scaling */
+  image-rendering: crisp-edges;
+  width: 800px;  /* visual scale: 2x the internal resolution */
+  height: 600px;
+  background: #000;
+  display:block;
+  border:6px solid #111827;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8), inset 0 0 0 2px rgba(255,255,255,0.02);
+  cursor:none; /* hide cursor for a more authentic arcade feel */
+}
+
+/* Scoreboard */
+#scoreboard{
+  font-size:18px;
+  letter-spacing:2px;
+  color:var(--accent);
+  background:rgba(0,0,0,0.6);
+  padding:6px 12px;
+  border-radius:4px;
+  border:2px solid rgba(127,255,212,0.12);
+  box-shadow: inset 0 -6px 12px rgba(127,255,212,0.02);
+  font-weight:700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Hint text */
+#hint{
+  font-size:12px;
+  color:var(--muted);
+  font-family: 'Courier New', Courier, monospace;
+  opacity:0.9;
+}
+
+/* Make text look a bit pixelated too */
+#scoreboard, #hint {
+  image-rendering: pixelated;
+  text-transform:uppercase;
+}
+
+/* Small responsive tweak */
+@media (max-width:720px){
+  canvas#game{ width: 360px; height: 270px; }
+}
