@@ -1,5 +1,7 @@
 # Ping Pong
 
+[![Verify Game](https://github.com/Tusharsharma420/ping-pong/actions/workflows/verify.yml/badge.svg)](https://github.com/Tusharsharma420/ping-pong/actions/workflows/verify.yml)
+
 A lightweight browser ping pong game built with HTML canvas, CSS, and JavaScript.
 
 ## Version
@@ -44,6 +46,8 @@ First side to 7 points wins.
 ├── package.json
 ├── VERSION
 ├── CHANGELOG.md
+├── LICENSE
+├── .github/workflows/verify.yml
 └── tools/
     ├── local-server.mjs
     └── verify-game.mjs
@@ -71,3 +75,7 @@ If Playwright cannot find a browser automatically, set `CHROME_EXECUTABLE_PATH` 
 2. Add release notes to `CHANGELOG.md`.
 3. Commit with a clear message, for example `Release v0.2.0`.
 4. Tag the commit with the same version, for example `v0.2.0`.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
