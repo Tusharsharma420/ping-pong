@@ -1,81 +1,62 @@
-# Ping Pong
+<h1 align="center">
+  <br>
+  🏓 Ping Pong
+  <br>
+</h1>
 
-[![Verify Game](https://github.com/Tusharsharma420/ping-pong/actions/workflows/verify.yml/badge.svg)](https://github.com/Tusharsharma420/ping-pong/actions/workflows/verify.yml)
+<h4 align="center">A lightweight, high-performance browser ping-pong game built with HTML5 Canvas and Vanilla JavaScript.</h4>
 
-A lightweight browser ping pong game built with HTML canvas, CSS, and JavaScript.
+<p align="center">
+  <a href="#features">Features</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#how-to-play">How To Play</a> •
+  <a href="#getting-started">Getting Started</a>
+</p>
 
-## Version
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.1.0-blue.svg" alt="Version">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/github/actions/workflow/status/Tusharsharma420/ping-pong/ci.yml?branch=main" alt="Build Status">
+</p>
 
-Current version: `0.1.0`
+---
 
-See [CHANGELOG.md](CHANGELOG.md) for release notes.
+## 🚀 Features
 
-## Play Locally
+- **Fluid Gameplay**: Optimized rendering loop using `requestAnimationFrame`.
+- **Keyboard & Mouse Support**: Play however you prefer.
+- **Zero Dependencies**: Pure Vanilla JS, CSS, and HTML.
 
-Open `index.html` directly in a browser, or run the local static server:
+## 🛠 Tech Stack
 
-```bash
-npm install
-npm start
-```
+- **Frontend**: HTML5 Canvas, CSS3, Vanilla JavaScript
 
-Then visit:
+## 🎮 How To Play
 
-```text
-http://127.0.0.1:8000/index.html
-```
+- `Space` or `Click`: Serve the ball
+- `W` / `S` or `Arrow Keys`: Move paddle
+- `Mouse`: Move paddle
+- `P`: Pause or resume
+- `R`: Restart
+- `F`: Fullscreen mode
 
-## Controls
+*First side to reach 7 points wins the match!*
 
-- `Space` or click: serve
-- `W` / `S` or arrow keys: move paddle
-- Mouse: move paddle
-- `P`: pause or resume
-- `R`: restart
-- `F`: fullscreen
+## 🏁 Getting Started
 
-First side to 7 points wins.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Tusharsharma420/ping-pong.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd ping-pong
+   ```
+3. Open `index.html` in your browser, or run the local server:
+   ```bash
+   npm install
+   npm start
+   ```
 
-## Project Structure
-
-```text
-.
-├── index.html
-├── style.css
-├── game.js
-├── package.json
-├── VERSION
-├── CHANGELOG.md
-├── LICENSE
-├── .github/workflows/verify.yml
-└── tools/
-    ├── local-server.mjs
-    └── verify-game.mjs
-```
-
-## Scripts
-
-```bash
-npm start
-```
-
-Starts the local static server on port `8000`.
-
-```bash
-npm run verify
-```
-
-Runs a Playwright smoke test that checks the menu, serve, pause/resume, moving ball state, console errors, and captures a screenshot at `output/web-game/chrome-verify.png`.
-
-If Playwright cannot find a browser automatically, set `CHROME_EXECUTABLE_PATH` before running verification.
-
-## Release Process
-
-1. Update `VERSION` and the `version` field in `package.json`.
-2. Add release notes to `CHANGELOG.md`.
-3. Commit with a clear message, for example `Release v0.2.0`.
-4. Tag the commit with the same version, for example `v0.2.0`.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+## 📝 License
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
